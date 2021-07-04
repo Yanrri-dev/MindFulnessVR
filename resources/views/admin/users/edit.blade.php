@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'HDEP')
+@section('title', 'MindFulness Admin')
 
 @section('content_header')
     <h1>Editar Usuario</h1>

@@ -258,9 +258,9 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Escenas',
+            'route'  => 'admin.scenes.index',
+            'icon' => 'fas fa-fw fa-binoculars',
         ],
         [
             'text'    => 'multilevel',

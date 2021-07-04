@@ -22,4 +22,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/escenas', [SceneController::class, 'index'] )->name('scenes');
+Route::get('/escenas', [SceneController::class, 'index'] )->name('scenes');
+Route::get('/escenas/{scene}', [SceneController::class, 'show'] )->name('scenes.show');

@@ -3,7 +3,7 @@
 @section('title', 'MindFulness Admin')
 
 @section('content_header')
-    <h1>Lista de Usuarios</h1>
+    <h1>Lista de Escenas</h1>
 @stop
 
 @section('content')
@@ -16,31 +16,29 @@
 
     <div class="card">
         <div class="card-header">
-            <a class="btn btn-primary" href="{{route('admin.users.create')}}"> Agregar Usuario</a>
+            <a class="btn btn-primary" href="{{route('admin.scenes.create')}}"> Agregar Escena</a>
         </div>
         <div class="card-body">
-            <table class="table table-striped display responsive nowrap" id="userTable">
+            <table class="table table-striped display responsive nowrap" id="scenesTable">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>Email</th>
                         <th></th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($users as $user)
+                    @foreach ($scenes as $scene)
                         <tr>
-                            <td>{{$user->id}}</td>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->email}}</td>
+                            <td>{{$scene->id}}</td>
+                            <td>{{$scene->name}}</td>
                             <td width="10px">
-                                <a class="btn btn-warning btn-sm " href="{{route('admin.users.edit',$user)}}">Editar</a>
+                                <a class="btn btn-warning btn-sm " href="{{route('admin.scenes.edit',$scene)}}">Editar</a>
                             </td>
-                            {{-- @can('admin.users.destroy') --}}
+                            {{-- @can('admin.scenes.destroy') --}}
                                 <td width="10px">
-                                    <form action="{{route('admin.users.destroy', $user)}}" method="POST">
+                                    <form action="{{route('admin.scenes.destroy', $scene)}}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
@@ -60,7 +58,7 @@
     <script>
 
         $(document).ready( function () {
-            $('#userTable').DataTable({
+            $('#scenesTable').DataTable({
                 "language": {
                     "url": "//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
                 },
