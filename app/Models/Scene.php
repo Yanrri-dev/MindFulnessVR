@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Image;
 use App\Models\Video;
+use App\Models\Answer;
 
 class Scene extends Model
 {
@@ -29,4 +30,9 @@ class Scene extends Model
     public function video(){
         return $this->morphOne(Video::class,'videoable');
     }
+
+    public function answers(){
+        return $this->hasMany(Answer::class);
+    }
+
 }

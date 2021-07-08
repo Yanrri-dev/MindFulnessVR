@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Question;
 
 class User extends Authenticatable
 {
@@ -58,4 +59,13 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    //many to many users - questions
+    //public function questions(){
+    //    return $this->belongsToMany(Question::class,'answers','user_id','question_id')->withPivot('score','scene_id')->withTimestamps();
+    //}
+
+    public function answers(){
+        return $this->hasMany(Answer::class);
+    }
 }

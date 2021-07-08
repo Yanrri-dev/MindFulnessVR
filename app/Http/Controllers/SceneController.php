@@ -19,7 +19,7 @@ class SceneController extends Controller
 
         $url = $scene->video->url;
 
-        return view('noadmin.scenes.show', compact('url'));
+        return view('noadmin.scenes.show', compact('url','scene'));
 
     }
 }

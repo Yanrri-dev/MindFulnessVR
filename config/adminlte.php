@@ -256,49 +256,19 @@ return [
             'text' => 'Usuarios',
             'route'  => 'admin.users.index',
             'icon' => 'fas fa-fw fa-user',
+            'active' => ['admin/users*'],
         ],
         [
             'text' => 'Escenas',
             'route'  => 'admin.scenes.index',
             'icon' => 'fas fa-fw fa-binoculars',
+            'active' => ['admin/scenes*'],
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
+            'text'    => 'Preguntas',
+            'icon'    => 'fas fa-fw fa-question',
+            'route'  => 'admin.questions.index',
+            'active' => ['admin/questions*'],
         ],
         ['header' => 'labels'],
         [

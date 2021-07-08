@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SceneController;
+use App\Http\Controllers\QuestionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +23,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/escenas', [SceneController::class, 'index'] )->name('scenes');
-Route::get('/escenas/{scene}', [SceneController::class, 'show'] )->name('scenes.show');
+Route::middleware(['auth:sanctum', 'verified'])->get('/escenas', [SceneController::class, 'index'] )->name('scenes');
+Route::middleware(['auth:sanctum', 'verified'])->get('/escenas/{scene}/play', [SceneController::class, 'show'] )->name('scene.show');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/escenas/{scene}/{type}', [QuestionController::class, 'index'] )->name('questions.index');
+Route::middleware(['auth:sanctum', 'verified'])->post('/escenas/{scene}/{type}', [QuestionController::class, 'store'] )->name('questions.store');
+
