@@ -9,7 +9,7 @@ class SceneController extends Controller
 {
     public function index(){
 
-        $scenes = Scene::all();
+        $scenes = Scene::orderBy('name', 'ASC')->get();
 
         return view('noadmin.scenes.index', compact('scenes'));
 
